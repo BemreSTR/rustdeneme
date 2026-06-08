@@ -1,0 +1,12 @@
+[package]
+name = "rustkv"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "A tiny embedded key-value database written in Rust."
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+thiserror = "1"
