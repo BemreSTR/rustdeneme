@@ -29,4 +29,12 @@ impl EntryIndex {
     pub fn is_empty(&self) -> bool {
         self.entries.is_empty()
     }
+
+    pub fn contains_key(&self, key: &str) -> bool {
+        self.entries.contains_key(key)
+    }
+
+    pub fn as_map(&self) -> &BTreeMap<String, String> {
+        &self.entries
+    }
 }

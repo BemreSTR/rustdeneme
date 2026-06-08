@@ -1,4 +1,4 @@
-use std::fs::{self, OpenOptions};
+use std::fs::{self, File, OpenOptions};
 use std::io::Write;
 use std::path::{Path, PathBuf};
 
@@ -17,6 +17,7 @@ pub struct SegmentLog {
     path: PathBuf,
 }
 
+#[allow(dead_code)]
 impl SegmentLog {
     pub fn new(path: impl Into<PathBuf>) -> Self {
         Self { path: path.into() }

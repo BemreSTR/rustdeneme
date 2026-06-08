@@ -150,7 +150,7 @@ impl Database {
     }
 
     pub fn compact(&mut self) -> Result<(), DatabaseError> {
-        compaction::rewrite_log(&self.config.log_path(), &self.entries).map_err(|err| match err {
+        compaction::rewrite_log(&self.config.log_path(), self.entries.as_map()).map_err(|err| match err {
             compaction::RewriteError::Append(log::AppendError::Encode(e)) => DatabaseError::Encode(e.to_string()),
             compaction::RewriteError::Append(log::AppendError::Io(e)) => DatabaseError::Io(e),
             compaction::RewriteError::Io(e) => DatabaseError::Io(e),

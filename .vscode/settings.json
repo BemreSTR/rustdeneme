@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^source \\$HOME/\\.cargo/env && cargo run --release -- init \\./data && cargo run --release -- put \\./data user:1 Alice && cargo run --release -- get \\./data user:1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
